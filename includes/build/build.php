@@ -25,8 +25,13 @@ $header = "
         </nav>
         <div>
             <a class='button' href='/login.php?page=authorization'>Вхід</a>
-            <a class='clear-button' id='searchButton' href='#'><i class='fas fa-search'></i></a>
-            <input type='text' id='searchField' class='search-field' placeholder='Введіть запит...'>
+            
+            <label>
+                <a class='clear-button' id='searchButton' onclick='return'>
+                    <i class='fas fa-search'></i>
+                </a>
+                <input type='text' id='searchField' class='search-field' placeholder='Введіть запит...'>
+            </label>
         </div>
     </div>
 </header>";
