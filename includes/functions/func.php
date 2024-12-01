@@ -3,7 +3,7 @@ function generateProductCategory($products): string{
     $html = '';
     foreach ($products as $product) {
         $html .= '<div class="product-item">';
-        $html .= '<img src="' . $product['image'] . '" alt="' . $product['title'] . '" class="product-image">';
+        $html .= '<img src="' . $product['image'] . '" alt="" class="product-image">';
         $html .= '<h3>' . $product['title'] . '</h3>';
         $html .= '<ul class="product-list">';
         foreach ($product['items'] as $item) {
