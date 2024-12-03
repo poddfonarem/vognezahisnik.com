@@ -6,8 +6,7 @@ else if ($formPanel === 'inventory') {$heading_h1 = 'Інвентар';}
 else{$heading_h1 = 'Категорії товарів';}
 
 require_once __DIR__ . '/includes/build/build.php';
-global $html, $header, $footer;
-echo $html, $header;
+echo $html ?? '', $header ?? '';
 
 switch ($formPanel) {
     case 'fire_extinguishers':
@@ -35,7 +34,7 @@ switch ($formPanel) {
     <h2><?=$h2?></h2>
     <div class="product-list">
         <?php
-        if($require != null && $require != ''){
+        if($require !== ''){
             require_once __DIR__ . $require;
             require_once __DIR__ . '/includes/functions/func.php';
             global $products;
@@ -47,4 +46,4 @@ switch ($formPanel) {
     </div>
 </section>
 
-<?=$footer?>
+<?=$footer ?? ''?>

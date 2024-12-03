@@ -1,7 +1,6 @@
 <?php
     require_once __DIR__ . '/includes/build/build.php';
-    global $html, $header, $footer;
-    echo $html, $header;
+    echo $html ?? '', $header ?? '';
 ?>
 
 <section class="hero">
@@ -47,4 +46,4 @@
         </div>
     </div>
 </section>
-<?=$footer?>
+<?=$footer ?? ''?>

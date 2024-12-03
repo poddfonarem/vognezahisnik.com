@@ -1,30 +1,30 @@
 <?php
-function generateProductCategory($products): string{
+function generateProductCategory(array $products): string{
     $html = '';
     foreach ($products as $product) {
         $html .= '<div class="product-item">';
-        $html .= '<img src="' . $product['image'] . '" alt="" class="product-image">';
-        $html .= '<h3>' . $product['title'] . '</h3>';
+        $html .= '<img src="' . htmlspecialchars($product['image']) . '" alt="" class="product-image">';
+        $html .= '<h3>' . htmlspecialchars($product['title']) . '</h3>';
         $html .= '<ul class="product-list">';
         foreach ($product['items'] as $item) {
-            $html .= '<li><i class="fas fa-fire"></i> ' . $item . '</li>';
+            $html .= '<li><i class="fas fa-fire"></i> ' . htmlspecialchars($item) . '</li>';
         }
         $html .= '</ul>';
-        $html .= '<a class="button" href="' . $product['link'] . '">' . $product['btn_name'] . ' <i class="fas fa-arrow-right"></i></a>';
+        $html .= '<a class="button" href="' . htmlspecialchars($product['link']) . '">' . htmlspecialchars($product['btn_name']) . ' <i class="fas fa-arrow-right"></i></a>';
         $html .= '</div>';
     }
     return $html;
 }
-function generateArticle($articles): string{
+function generateArticle(array $articles): string{
     $html = '';
     foreach ($articles as $article) {
         $html .= '<div class="product-item">';
-        $html .= '<img src="/images/articles/Info.png" alt="' . $article['title'] . '" class="product-image" 
+        $html .= '<img src="/images/articles/Info.png" alt="' . htmlspecialchars($article['title']) . '" class="product-image" 
         style="height:auto;">';
-        $html .= '<h3>' . $article['title'] . '</h3>';
+        $html .= '<h3>' . htmlspecialchars($article['title']) . '</h3>';
         $html .= '<ul class="product-list">';
         foreach ($article['items'] as $item) {
-            $html .= '<li><a href="#" class="hover_underline"><i class="fas fa-list"></i> ' . $item . '</a></li>';
+            $html .= '<li><a href="#" class="hover_underline"><i class="fas fa-list"></i> ' . htmlspecialchars($item) . '</a></li>';
         }
         $html .= '</ul>';
         $html .= '</div>';
@@ -32,14 +32,14 @@ function generateArticle($articles): string{
     return $html;
 }
 
-function generateReviews($reviews): string{
+function generateReviews(array $reviews): string{
     $html = '';
     foreach ($reviews as $review) {
         $html .= '<article class="feedback">';
         $html .= '';
-        $html .= '<h3>' . $review['name'] . '</h3>';
-        $html .= '<p>' . $review['text'] . '</p>';
-        $html .= '<span class="date">' . $review['date'] . '</span>';
+        $html .= '<h3>' . htmlspecialchars($review['name']) . '</h3>';
+        $html .= '<p>' . htmlspecialchars($review['text']) . '</p>';
+        $html .= '<span class="date">' . htmlspecialchars($review['date']) . '</span>';
         $html .= '</article>';
     }
     return $html;

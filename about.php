@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/build/build.php';
-global $html, $header, $footer;
-echo $html, $header;
+echo $html ?? '', $header ?? '';
 ?>
 <section id="about" class="about">
     <div class="content">
@@ -10,4 +9,4 @@ echo $html, $header;
         <a href="#about-us" class="button">Вся інформація <i class="fas fa-arrow-down"></i></a>
     </div>
 </section>
-<?=$footer?>
+<?=$footer ?? ''?>
